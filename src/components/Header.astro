@@ -1,7 +1,7 @@
 <header
     class="pl-5 pt-5 pb-5 pr-5 bg-gray-800 text-white flex items-center justify-between">
     <h1 class="text-4xl">Astro blog</h1>
-    <nav class="flex space-x-7">
+    <nav class="hidden md:flex space-x-7">
         <a href="/" class="text-lg hover:text-gray-300 transition-colors"
             >Home</a
         >
@@ -12,4 +12,72 @@
             >About</a
         >
     </nav>
+    <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 -mr-1 rounded focus:outline-none relative w-10 h-8 flex flex-col justify-center">
+        <span
+            class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300 origin-center mb-1.5"
+        ></span>
+        <span
+            class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"
+        ></span>
+        <span
+            class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300 origin-center mt-1.5"
+        ></span>
+    </button>
 </header>
+
+<nav
+    id="mobile-menu"
+    class="md:hidden hidden bg-gray-800 border-t border-gray-700">
+    <a
+        href="/"
+        class="block text-white px-5 py-4 text-lg border-b border-gray-700 hover:bg-gray-700 transition-colors"
+        >Home</a
+    >
+    <a
+        href="/blog"
+        class="block text-white px-5 py-4 border-b border-gray-700 text-lg hover:bg-gray-700 transition-colors"
+        >Blog</a
+    >
+    <a
+        href="/about"
+        class="block text-white px-5 py-4 text-lg hover:bg-gray-700 transition-colors"
+        >About</a
+    >
+</nav>
+<script>
+    declare global {
+        interface Window {
+            toggleMobileMenu: () => void
+        }
+    }
+
+    const btn: HTMLElement | null = document.getElementById(
+        "mobile-menu-btn",
+    ) as HTMLElement | null
+    const menu: HTMLElement | null = document.getElementById(
+        "mobile-menu",
+    ) as HTMLElement | null
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden")
+            const isOpen = !menu.classList.contains("hidden")
+
+            const lines = btn.querySelectorAll(
+                ".hamburger-line",
+            ) as NodeListOf<HTMLElement>
+
+            if (isOpen) {
+                lines[0].classList.add("rotate-45", "translate-y-2")
+                lines[1].classList.add("opacity-0")
+                lines[2].classList.add("-rotate-45", "-translate-y-2")
+            } else {
+                lines[0].classList.remove("rotate-45", "translate-y-2")
+                lines[1].classList.remove("opacity-0")
+                lines[2].classList.remove("-rotate-45", "-translate-y-2")
+            }
+        })
+    }
+</script>
