@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Learning Astro Routing"
 author: "Astro Learner"
 description: "File-based routing makes it easy to understand where pages come from."

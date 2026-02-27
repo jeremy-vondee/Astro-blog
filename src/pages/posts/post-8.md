@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Handling Images in Astro"
 author: "Astro Learner"
 description: "Experimenting with images, alt text, and layout."

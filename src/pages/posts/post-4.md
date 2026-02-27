@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Playing With Astro Components"
 author: "Astro Learner"
 description: "Small, reusable pieces that make my site feel well-structured."

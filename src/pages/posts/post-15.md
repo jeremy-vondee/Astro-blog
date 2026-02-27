@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Working With Dynamic Routes"
 author: "Astro Learner"
 description: "Using parameters in URLs to render different content."

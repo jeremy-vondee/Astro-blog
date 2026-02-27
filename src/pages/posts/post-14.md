@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Refactoring My Astro Project"
 author: "Astro Learner"
 description: "Cleaning up my folder structure as the project grows."

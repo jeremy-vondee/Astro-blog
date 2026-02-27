@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Experimenting With Dark Mode"
 author: "Astro Learner"
 description: "First steps toward a theme toggle."

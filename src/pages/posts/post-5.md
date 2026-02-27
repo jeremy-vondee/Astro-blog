@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Styling My Astro Blog"
 author: "Astro Learner"
 description: "Making the blog look less like a wireframe and more like a real website."

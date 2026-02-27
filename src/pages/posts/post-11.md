@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Adding a Blog Index Page"
 author: "Astro Learner"
 description: "Listing all my posts in one place."

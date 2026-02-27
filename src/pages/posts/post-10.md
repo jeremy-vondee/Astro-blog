@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Deploying My Astro Site"
 author: "Astro Learner"
 description: "Getting my local project onto the public web."

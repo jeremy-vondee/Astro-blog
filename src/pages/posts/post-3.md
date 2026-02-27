@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Understanding Astro Layouts"
 author: "Astro Learner"
 description: "How I used layouts to keep my pages consistent."

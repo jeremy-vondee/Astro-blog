@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Improving Accessibility"
 author: "Astro Learner"
 description: "Little changes that make a big difference for many users."

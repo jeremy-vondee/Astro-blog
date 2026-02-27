@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Tagging My Blog Posts"
 author: "Astro Learner"
 description: "Using tags to organize related topics."

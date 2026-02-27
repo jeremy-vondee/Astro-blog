@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Markdown and Content Collections"
 author: "Astro Learner"
 description: "Organizing my posts so they’re easy to query and display."
