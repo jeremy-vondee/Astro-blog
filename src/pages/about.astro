@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css"
 import Header from "../components/Header.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 
 const pageTitle = "About me"
 
@@ -18,47 +19,76 @@ const finished = false
 const goal = 3
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{pageTitle}</title>
-
-        <Header />
-    </head>
+<BaseLayout pageTitle={pageTitle}>
     <main>
-        <h1>{pageTitle}</h1>
-        <p>Here are a few facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>
+        <h1
+            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
+            {pageTitle}
+        </h1>
+
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            Here are a few facts about me:
+        </p>
+
+        <ul
+            class="list-disc list-inside space-y-2 text-gray-700 max-w-xl mb-8 pl-4">
+            <li class="text-base">My name is {identity.firstName}.</li>
+            <li class="text-base">
                 I live in {identity.country} and I work as a {
                     identity.occupation
                 }.
             </li>
             {
                 identity.hobbies.length >= 2 && (
-                    <li>
+                    <li class="text-base">
                         Two of my hobbies are: {identity.hobbies[0]} and{" "}
                         {identity.hobbies[1]}
                     </li>
                 )
             }
         </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
 
-        {finished && <p>I finished this tutorial!</p>}
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mb-6 leading-relaxed">
+            My skills are:
+        </p>
+
+        <ul
+            class="list-disc list-inside grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-700 max-w-lg mb-8 pl-4">
+            {
+                skills.map((skill) => (
+                    <li class="text-base bg-blue-50 px-3 py-1 rounded-md border border-blue-200 hover:bg-blue-100 transition-colors">
+                        {skill}
+                    </li>
+                ))
+            }
+        </ul>
+
+        {
+            happy && (
+                <p class="mt-6 text-lg text-green-700 bg-green-50 p-4 rounded-lg border border-green-200 max-w-xl">
+                    I am happy to be learning Astro!
+                </p>
+            )
+        }
+
+        {
+            finished && (
+                <p class="mt-6 text-lg text-emerald-700 bg-emerald-50 p-4 rounded-lg border border-emerald-200 max-w-xl">
+                    I finished this tutorial!
+                </p>
+            )
+        }
 
         {
             goal === 3 ? (
-                <p>My goal is to finish in 3 days.</p>
+                <p class="mt-6 text-lg text-indigo-700 bg-indigo-50 p-4 rounded-lg border border-indigo-200 max-w-xl">
+                    My goal is to finish in 3 days.
+                </p>
             ) : (
-                <p>My goal is not 3 days.</p>
+                <p class="mt-6 text-lg text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 max-w-xl">
+                    My goal is not 3 days.
+                </p>
             )
         }
     </main>
-</html>
+</BaseLayout>
